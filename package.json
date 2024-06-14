@@ -1,0 +1,14 @@
+{
+  "name": "express-starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx nodemon index.js",
+    "start": "node index.js",
+    "seed": "node db/seed.js",
+    "build": "npm install"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
