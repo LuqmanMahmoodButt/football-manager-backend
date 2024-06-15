@@ -12,7 +12,7 @@ const playerSchema = new mongoose.Schema({
     def: { type: Number, required: true },
     phy: { type: Number, required: true },
     createdBy: {type: mongoose.Schema.ObjectId, ref: "User", required: true },
-    image: {type: String, required: true }
+    image: {type: String, required: false }
   })
 
   export default mongoose.model("Player", playerSchema)
