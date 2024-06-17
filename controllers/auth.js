@@ -18,7 +18,6 @@ router.post('/signup', async (req, res, next) => {
     const passwordHash = bcrypt.hashSync(req.body.password, 10)
     req.body.password = passwordHash
 
-
     const user = await User.create(req.body)
     res.status(201).json({
         message: `Welcome ${user.username}!`,
@@ -28,8 +27,6 @@ router.post('/signup', async (req, res, next) => {
     next(err)
   }
 })
-
-
 
 router.post('/login', async (req, res, next) => {
   try {
@@ -42,7 +39,6 @@ router.post('/login', async (req, res, next) => {
       req.body.password,
       user.password
     )
-
 
     if (!passwordsMatch) {
       throw new Unauthorized()
@@ -69,7 +65,6 @@ router.post('/login', async (req, res, next) => {
     next(err)
   }
 })
-
 
 export default router
 

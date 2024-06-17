@@ -7,8 +7,6 @@ import authRouter from './controllers/auth.js';
 import errorHandler from './middleware/errorHandler.js';
 import logger from './middleware/logger.js';
 
-
-
 const app = express();
 
 app.use(express.json());
@@ -17,7 +15,6 @@ app.use('/', logger);
 app.use('/api',authRouter)
 app.use('/api',playerRouter)
 app.use(errorHandler);
-
 
 async function startServer() {
     try {

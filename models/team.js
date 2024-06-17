@@ -1,8 +1,8 @@
 import mongoose from 'mongoose'
 
 const teamSchema = new mongoose.Schema({
-    manager: { type: String, unique: true, maxlength: 50, required: true },
-    budget: { type: String, required: true },
+    manager: {type: mongoose.Schema.ObjectId, ref: "User", required: true },
+    budget: { type: String, required: false },
     Player1: { type: String, required: true },
     Player1Position: { type: String, required: true },
     Player2: { type: String, required: true },

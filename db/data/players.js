@@ -1,10 +1,36 @@
 export default [
     {
         "playerCost": 9000000,
+        "name": "Lionel Messi",
+        "nationality": "Argentina",
+        "position": "Striker",
+        "image": " ",
+        "pac": 95,
+        "sho": 98,
+        "pas": 99,
+        "dri": 99,
+        "def": 41,
+        "phy": 81
+    },
+    {
+        "playerCost": 9000000,
+        "name": "Cristiano Ronaldo",
+        "nationality": "Portugal",
+        "position": "Striker",
+        "image": " ",
+        "pac": 97,
+        "sho": 99,
+        "pas": 93,
+        "dri": 97,
+        "def": 41,
+        "phy": 88
+    },
+    {
+        "playerCost": 8000000,
         "name": "Pelé",
         "nationality": "Brazil",
         "position": "Striker",
-        "image": " ",
+        "image": "https://fifauteam.com/images/items/icons/fifa23/items/pele-98.webp",
         "pac": 95,
         "sho": 96,
         "pas": 93,
@@ -26,6 +52,19 @@ export default [
         "phy": 76
     },
     {
+        "playerCost": 7000000,
+        "name": "Neymar",
+        "nationality": "Brazil",
+        "position": "Striker",
+        "image": " ",
+        "pac": 91,
+        "sho": 89,
+        "pas": 86,
+        "dri": 94,
+        "def": 37,
+        "phy": 60
+    },
+    {
         "playerCost": 6000000,
         "name": "Zidane",
         "nationality": "France",
@@ -44,12 +83,12 @@ export default [
         "nationality": "Sweden",
         "position": "Striker",
         "image": " ",
-        "pac": 85,
-        "sho": 98,
-        "pas": 91,
-        "dri": 97,
-        "def": 41,
-        "phy": 97
+        "pac": 86,
+        "sho": 93,
+        "pas": 82,
+        "dri": 86,
+        "def": 40,
+        "phy": 84
     },
     {
         "playerCost": 4000000,
@@ -882,6 +921,45 @@ export default [
         "dri": 89,
         "def": 40,
         "phy": 95,
+        "image": ""
+    },
+    {
+        "playerCost": 1000000,
+        "name": "Thibaut Courtois",
+        "nationality": "Belgium",
+        "position": "Goalkeeper",
+        "pac": 87,
+        "sho": 91,
+        "pas": 79,
+        "dri": 88,
+        "def": 48,
+        "phy": 89,
+        "image": ""
+    },
+    {
+        "playerCost": 1000000,
+        "name": "Gianluigi Buffon",
+        "nationality": "Italy",
+        "position": "Goalkeeper",
+        "pac": 90,
+        "sho": 89,
+        "pas": 87,
+        "dri": 93,
+        "def": 65,
+        "phy": 99,
+        "image": ""
+    },
+    {
+        "playerCost": 1000000,
+        "name": "Manuel Neuer",
+        "nationality": "Germany",
+        "position": "Goalkeeper",
+        "pac": 97,
+        "sho": 98,
+        "pas": 100,
+        "dri": 96,
+        "def": 71,
+        "phy": 99,
         "image": ""
     },
     {
