@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import { port } from './config/environment.js';
 import playerRouter from './controllers/players.js';
+import teamRouter from './controllers/teams.js';
 import express from 'express';
 import { connectToDb } from './db/helpers.js';
 import authRouter from './controllers/auth.js';
@@ -14,6 +15,7 @@ app.use('/', logger);
 
 app.use('/api',authRouter)
 app.use('/api',playerRouter)
+app.use('/api',teamRouter)
 app.use(errorHandler);
 
 async function startServer() {

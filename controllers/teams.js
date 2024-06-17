@@ -2,6 +2,7 @@ import { NotFound } from '../lib/errors.js';
 import Player from '../models/player.js'
 import express  from 'express'
 import Team from '../models/team.js'
+import secureRoute from '../middleware/secureRoute.js'
 
 const router = express.Router()
 
@@ -14,8 +15,9 @@ router.get('/teams', async function playerIndex(req, res, next) {
     }
   })
 
-  router.post('/teams', async function playerIndex(req, res, next) {
+  router.post('/teams', secureRoute, async function teamIndex(req, res, next) {
     try {
+        console.log(req.body.team)
         const existingTeam = await Team.findOne({ name: req.body.name })
         if (existingTeam) throw new AlreadyExists()
         req.body.manager = res.locals.currentUser
@@ -25,3 +27,5 @@ router.get('/teams', async function playerIndex(req, res, next) {
         next(err);
       }
     })
+
+    export default router
