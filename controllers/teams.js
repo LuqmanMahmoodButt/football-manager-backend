@@ -4,6 +4,7 @@ import express  from 'express'
 import Team from '../models/team.js'
 import secureRoute from '../middleware/secureRoute.js'
 
+
 const router = express.Router()
 
 router.get('/teams', async function playerIndex(req, res, next) {
@@ -17,12 +18,18 @@ router.get('/teams', async function playerIndex(req, res, next) {
 
   router.post('/teams', secureRoute, async function teamIndex(req, res, next) {
     try {
-        console.log(req.body.team)
-        const existingTeam = await Team.findOne({ name: req.body.name })
-        if (existingTeam) throw new AlreadyExists()
-        req.body.manager = res.locals.currentUser
-        const createdTeam = await Team.create(req.body);
-        return res.status(201).json(createdTeam);
+        const existingTeam = await Team.findOne({ name: req.body.manager })
+        //if (existingTeam) throw new AlreadyExists()
+        console.log(res.locals.currentUser)
+        const teamData = {
+          budget: req.body.budget,
+          manager: res.locals.currentUser,
+          players: req.body.players
+      }
+
+      const createdTeam = await Team.create(teamData);
+      return res.status(201).json(createdTeam);
+
       } catch (err) {
         next(err);
       }

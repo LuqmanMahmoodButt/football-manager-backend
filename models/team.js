@@ -1,19 +1,9 @@
 import mongoose from 'mongoose'
 
 const teamSchema = new mongoose.Schema({
-    manager: {type: mongoose.Schema.ObjectId, ref: "User", required: true },
+    manager: {type: mongoose.Schema.ObjectId, ref: "User", required: false },
     budget: { type: String, required: false },
-    Player1: { type: String, required: true },
-    Player1Position: { type: String, required: true },
-    Player2: { type: String, required: true },
-    Player2Position: { type: String, required: true },
-    Player3: { type: String, required: true },
-    Player3Position: { type: String, required: true },
-    Player4: { type: String, required: true },
-    Player4Position: { type: String, required: true },
-    Player5: { type: String, required: true },
-    Player5Position: { type: String, required: true },
-    GoalKeeper: { type: String, required: true },
+    players: [{type: mongoose.Schema.ObjectId, ref: "Player", required: false }]
   })
 
   export default mongoose.model("Team", teamSchema)

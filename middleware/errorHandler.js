@@ -18,9 +18,9 @@ export default function errorHandler(err, req, res, next) {
       return res.status(422).json(customErrors)
     }
   
-    //if (err.name === 'AlreadyExists') {
-      //return res.status(400).json({ message: 'This player already exists in CheeseBored, please try another 🧀!' })
-    //}
+    if (err.name === 'AlreadyExists') {
+      return res.status(400).json({ message: 'This player already exists in CheeseBored, please try another 🧀!' })
+    }
   
     //* User errors
     if (err.name === 'UsernameExists') {
