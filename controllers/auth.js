@@ -4,6 +4,7 @@ import User from '../models/user.js'
 import { PasswordsNotMatching, Unauthorized } from '../lib/errors.js'
 import jwt from "jsonwebtoken"
 import { secret } from '../config/environment.js'
+import Team from '../models/team.js'
 const router = express.Router()
 
 // lets use the errors from errors.js
@@ -19,6 +20,15 @@ router.post('/signup', async (req, res, next) => {
     req.body.password = passwordHash
 
     const user = await User.create(req.body)
+
+    const teamData = {
+      manager: user,
+      budget: 2000000,
+      players:[]
+    }
+
+    await Team.create(teamData)
+
     res.status(201).json({
         message: `Welcome ${user.username}!`,
     })

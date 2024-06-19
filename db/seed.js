@@ -5,6 +5,7 @@ import playerData from './data/players.js'
 import bcrypt from 'bcrypt'
 import Team from '../models/team.js'
 
+import { startingBudget } from '../config/environment.js'
 
 async function seed() {
     try {
@@ -33,9 +34,10 @@ async function seed() {
 
         console.log(` ${players.length} players added to Database`)
 
+
         const teamData = {
-            budget: "2000",
             manager: adminUser,
+            budget: startingBudget,
             players: players
         }
 
