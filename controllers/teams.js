@@ -19,7 +19,7 @@ router.get('/teams', async function playerIndex(req, res, next) {
   router.post('/teams', secureRoute, async function teamIndex(req, res, next) {
     try {
         const existingTeam = await Team.findOne({ name: req.body.manager })
-        //if (existingTeam) throw new AlreadyExists()
+        // if (existingTeam) throw new AlreadyExists()
         console.log(res.locals.currentUser)
         const teamData = {
           budget: req.body.budget,
@@ -35,4 +35,5 @@ router.get('/teams', async function playerIndex(req, res, next) {
       }
     })
 
+    
     export default router
