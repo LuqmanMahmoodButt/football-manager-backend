@@ -3,7 +3,7 @@ import express from 'express'
 import User from '../models/user.js'
 import { PasswordsNotMatching, Unauthorized } from '../lib/errors.js'
 import jwt from "jsonwebtoken"
-import { secret } from '../config/environment.js'
+import { secret, startingBudget } from '../config/environment.js'
 import Team from '../models/team.js'
 const router = express.Router()
 
@@ -23,7 +23,7 @@ router.post('/signup', async (req, res, next) => {
 
     const teamData = {
       manager: user,
-      budget: 2000000,
+      budget: startingBudget,
       players:[]
     }
 

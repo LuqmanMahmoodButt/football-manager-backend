@@ -5,6 +5,6 @@ export const dbURI = process.env.MONGODB_URI || 'mongodb://127.0.0.1/Football-Ma
 export const port = process.env.PORT || 4000;
 export const secret = process.env.SECRET || 'ManchesterUnitedFlamengo';
 
-export const startingBudget = 2000000
+export const startingBudget = 20000000
 
 

@@ -9,13 +9,14 @@ const router = express.Router()
 
 router.get('/teams', async function playerIndex(req, res, next) {
   try {
-    const players = await Team.find();
-    return res.status(200).json(players);
+    const teams = await Team.find().populate('players').populate('manager');
+  
+    return res.status(200).json(teams);
+  
   } catch (err) {
     next(err);
   }
 })
-
 
 router.get('/userteam', secureRoute, async function getUserTeam(req, res, next) {
 
@@ -26,7 +27,7 @@ router.get('/userteam', secureRoute, async function getUserTeam(req, res, next) 
 
 router.put('/teams', secureRoute, async function teamIndex(req, res, next) {
   try {
-    const existingTeam = await Team.findOneAndUpdate({ manager: res.locals.currentUser._id }, req.body)
+    const existingTeam = await Team.findOneAndUpdate({ manager: res.locals.currentUser._id }, req.body, {new: true}).populate("players")
     // if (existingTeam) throw new AlreadyExists()
     console.log(res.locals.currentUser)
     console.log(existingTeam)
