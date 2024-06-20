@@ -21,7 +21,7 @@ router.get('/teams', async function playerIndex(req, res, next) {
 router.get('/userteam', secureRoute, async function getUserTeam(req, res, next) {
 
   const team = await Team.findOne({ manager: res.locals.currentUser._id }).populate("players")
-
+  console.log(res.locals.currentUser._id)
   return res.status(200).json(team)
 })
 

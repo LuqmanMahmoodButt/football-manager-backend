@@ -17,6 +17,8 @@ async function secureRoute  (req, res, next) {
 
         const user = await User.findById(payload.userId)
 
+        if (!user) throw new Unauthorized()
+
         res.locals.currentUser = user
 
         next()
