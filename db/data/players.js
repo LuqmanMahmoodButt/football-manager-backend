@@ -26,17 +26,17 @@ export default [
         "phy": 88
     },
     {
-        "playerCost": 8000000,
+        "playerCost": 10000000,
         "name": "Pelé",
         "nationality": "Brazil",
         "position": "Striker",
-        "image": "https://fifauteam.com/images/items/icons/fifa23/items/pele-98.webp",
-        "pac": 95,
-        "sho": 96,
-        "pas": 93,
-        "dri": 96,
-        "def": 60,
-        "phy": 76
+        "image": "https://mirrorcdn.soccerguru.live/cards/master/38afa711-9a9c-44c9-a90d-0090839b3c71.png",
+        "pac": 96,
+        "sho": 97,
+        "pas": 94,
+        "dri": 99,
+        "def": 61,
+        "phy": 78
     },
     {
         "playerCost": 8000000,
