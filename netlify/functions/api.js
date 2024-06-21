@@ -9,7 +9,7 @@ import logger from './middleware/logger.js';
 import { connectToDb } from './db/helpers.js';
 import 'dotenv/config';
 import cors from 'cors'
-import serverless from 'serverless-hhtp'
+import serverless from 'serverless-http'
 
 
 const app = express();
