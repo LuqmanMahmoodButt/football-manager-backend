@@ -1,12 +1,10 @@
-import { port } from '../../config/environment.js';
 import express from 'express';
-import mongoose from 'mongoose';
 import teamRouter from '../../controllers/teams.js';
 import playerRouter from '../../controllers/players.js';
 import authRouter from '../../controllers/auth.js';
 import errorHandler from '../../middleware/errorHandler.js';
-import logger from './middleware/logger.js';
-import { connectToDb } from './db/helpers.js';
+import logger from '../../middleware/logger.js';
+import { connectToDb } from '../../db/helpers.js';
 import 'dotenv/config';
 import cors from 'cors'
 import serverless from 'serverless-http'
